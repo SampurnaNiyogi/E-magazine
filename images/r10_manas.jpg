@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S3Z9824R5Z"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-S3Z9824R5Z', {
+        page_title: document.title,
+        page_location: window.location.href,
+        anonymize_ip: true
+      });
+    </script>
+  
+  <title>Assam Times</title>
+  
+    
+      <meta name="description" content="Assam Times — Assam&#39;s community-powered online newspaper. Latest news, politics, business, and more from Assam and Northeast India.">
+    
+    
+    <meta property="og:site_name" content="Assam Times">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://assamtimes.org/">
+    <meta property="og:title" content="Assam Times">
+    <meta property="og:description" content="Assam Times — Assam&#39;s community-powered online newspaper. Latest news, politics, business, and more from Assam and Northeast India.">
+    <meta property="og:image" content="https://assamtimes.org/uploads/branding/favicon-512.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Assam Times">
+    <meta name="twitter:description" content="Assam Times — Assam&#39;s community-powered online newspaper. Latest news, politics, business, and more from Assam and Northeast India.">
+    <meta name="twitter:image" content="https://assamtimes.org/uploads/branding/favicon-512.png">
+    <meta name="twitter:site" content="@assamtimes_">
+  
+  
+    <link rel="canonical" href="https://assamtimes.org/">
+  
+  <meta name="robots" content="index, follow">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Assam Times","url":"https://assamtimes.org/"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Assam Times","url":"https://assamtimes.org/","logo":"https://assamtimes.org/uploads/branding/favicon-512.png"}</script>
+  <link rel="alternate" type="application/rss+xml" title="Assam Times RSS Feed" href="https://assamtimes.org/feed">
+  <link rel="icon" href="/uploads/branding/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/uploads/branding/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/uploads/branding/favicon-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/uploads/branding/favicon-512.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/uploads/branding/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#FF6600">
+  <!-- iOS only supports Web Push for a site installed via "Add to Home
+       Screen" (iOS 16.4+), and only treats it as installable/standalone
+       with these — without them this is just a bookmark, and push
+       silently can't work at all. -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Assam Times">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="preconnect" href="https://pagead2.googlesyndication.com">
+  <!-- Hand-picked subset of style.css covering the chrome every page needs
+       immediately (header, fonts, base container) plus the homepage's
+       hero/first-card/grid, so the full sheet below can load without
+       blocking first paint. NOT auto-generated — if those specific rules
+       in style.css change, update this block too or it'll drift stale.
+       CONFIRMED LIVE (2026-06-24, via real CLS measurement) that this had
+       already drifted: .header-date/.header-icons/.header-icon-btn/
+       .header-plus-btn were added to the real header in later sessions
+       (header date, push-subscribe bell, AssamTimes+ icon) but never
+       backported here — those elements rendered unstyled/default-sized
+       until the full sheet loaded ~900ms+ later, then snapped to their
+       real size, moving the whole header (and everything below it,
+       including .site-main) — measured at ~0.68 CLS on every single page
+       load, the dominant cause of the regression this fixed. Same bug,
+       second instance: .mega-menu/.mobile-menu also weren't here, so
+       before the full sheet loads they're plain in-flow visible blocks
+       (their real position:fixed+visibility:hidden lives in the full
+       sheet only) — their full column/nav content briefly renders inline
+       in the page, pushing .site-main down, then jumps back up once
+       hidden. Only showed up intermittently in testing (depends on
+       whether first paint races ahead of the full sheet's onload swap),
+       which is exactly why it's worth having here unconditionally rather
+       than trusting it'll usually be fast enough. (style.min.css loads as
+       a plain blocking <link> now, not async — see the 2026-07-03 FOUC
+       fix — so the original CLS scenario above can't recur the same way;
+       this block is a supplementary safety net at this point, not a hard
+       requirement, but still real: DRIFTED A 4TH TIME 2026-07-27 — the
+       header's two-color split (.header-left orange/.header-right black)
+       was built in style.css without updating this block, and the stale
+       duplicate here didn't just render pre-fix styling, it actively
+       broke the real stylesheet's fix: this block's old `.header-left
+       {flex:1}` and the real stylesheet's newer `.header-left
+       {flex-shrink:0}` are a shorthand/longhand pair, and per-property
+       cascade resolution meant the real rule's flex-shrink:0 won but
+       flex-grow:1/flex-basis:0% silently survived from here since nothing
+       later re-declared them — .header-left grew to ~half the header
+       instead of hugging its content. Fixed by syncing this block AND by
+       making the real rule a full `flex:0 0 auto` shorthand so it can't
+       be partially overridden by a stale duplicate like this again.) -->
+  <style>
+    *{box-sizing:border-box}
+    :root{--font-headline:'Arial Narrow',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;--font-body:Georgia,'Times New Roman',serif;--divider-color:#e0e0e0}
+    h1,h2,h3{font-family:var(--font-headline)}
+    body{margin:0;font-family:var(--font-body);color:#1a1a1a;background:#fff}
+    .site-header{position:sticky;top:0;z-index:100}
+    .site-header__inner{max-width:1084px;margin:0 auto;display:flex;align-items:stretch;padding:0;height:auto;gap:0}
+    .header-left{display:flex;align-items:center;gap:10px;flex:0 0 auto;min-width:0;max-width:410px;background-color:#FF6600;padding:3px 0 3px 16px}
+    .header-right{display:flex;align-items:center;flex:1;min-width:0;background-color:#fff;padding:3px 16px 3px 10px}
+    .hamburger-btn{width:44px;height:65px;flex-shrink:0}
+    .site-logo-link{display:flex;align-items:center;text-decoration:none;min-width:0}
+    .site-logo{height:65px;width:auto;max-width:100%;display:block;transition:height .2s ease}
+    .header-date{font-size:.78rem;color:#000;font-weight:700;white-space:nowrap;border-left:1px solid rgba(0,0,0,.2);padding-left:12px;margin-left:4px}
+    .header-icons{display:flex;align-items:center;gap:8px;flex-shrink:0;margin-left:auto}
+    .header-icon-btn{width:36px;height:36px;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.06);border:1px solid rgba(0,0,0,.15);border-radius:50%;color:#000;cursor:pointer;font-size:1rem;flex-shrink:0}
+    .header-plus-btn{display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;text-decoration:none;flex-shrink:0;position:relative}
+    .mega-menu{position:fixed;inset:0;z-index:500;visibility:hidden;pointer-events:none}
+    .mobile-menu{display:none;position:fixed;top:0;left:0;width:100%;z-index:400;visibility:hidden;pointer-events:none}
+    .site-main{max-width:1084px;margin:0 auto;padding:40px 1.5rem 1.5rem;border-left:2px solid var(--divider-color);border-right:2px solid var(--divider-color)}
+    .home-layout{display:grid;grid-template-columns:650px 350px;gap:2rem}
+    .category-section{margin-top:2.5rem;padding-top:1.75rem}
+    .home-stack>.category-section:first-child{margin-top:0;padding-top:0;border-top:none}
+    .category-section__row--hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem}
+    .category-section__quad-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem}
+    .category-section__row--grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+    .editors-picks__row1{display:grid;grid-template-columns:3fr 1fr;gap:1.5rem;margin-bottom:1.5rem}
+    .story-card{min-width:0}
+    .story-card__link{display:block;color:inherit;text-decoration:none}
+    .story-card__media{position:relative}
+    .story-card__image{width:100%;height:160px;object-fit:cover;display:block}
+    .story-card--large .story-card__image{height:335px}
+    .story-card--small .story-card__image{height:120px}
+    .story-card--split .story-card__link{display:grid;grid-template-columns:7fr 3fr}
+    .story-card--split .story-card__image{width:100%;aspect-ratio:4/3;height:auto;object-fit:cover;display:block}
+    .story-card__title{font-family:var(--font-headline);font-size:1.2rem;line-height:1.25;margin:.6rem 0 .3rem}
+    .story-card--large .story-card__title{font-size:1.9rem}
+    .story-card__meta{font-size:.8rem;color:#666;margin:0}
+    .article-detail__image{width:100%;height:auto;object-fit:cover;margin:1rem 0 1.25rem}
+    .sidebar-author-article,.sidebar-related-article,.sidebar-article{margin-bottom:16px;overflow:hidden}
+    .sidebar-article-thumb{float:right;margin:0 0 4px 12px}
+    .sidebar-author-article img,.sidebar-related-article img,.sidebar-article img{width:150px;height:90px;object-fit:cover;display:block}
+    .sidebar-author-article-info h4,.sidebar-related-article-info h4,.sidebar-article-info h4{font-size:.82rem;margin:0 0 3px 0;line-height:1.3}
+    .sidebar-article-desc{font-size:.8rem;color:#666;line-height:1.4;margin:0 0 4px}
+    .article-meta{font-size:.8rem;color:#666}
+    .sidebar-author-article-info .article-meta,.sidebar-related-article-info .article-meta,.sidebar-article-info .article-meta{font-size:.72rem;color:#888}
+    .article-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+    .page-title{text-transform:uppercase;border-bottom:3px solid #1a1a1a;padding-bottom:.75rem;margin-bottom:1.5rem}
+    .home-sidebar__heading{margin-top:0;text-transform:uppercase;font-size:1rem;border-bottom:2px solid #1a1a1a;padding-bottom:.5rem}
+    .search-result{padding:16px 0;border-bottom:1px solid #eee}
+    @media (max-width:600px){
+      .header-left{padding:3px 0 3px 10px;max-width:none}
+      .header-right{padding:3px 10px 3px 10px}
+      .site-logo{height:40px}
+      .hamburger-btn{height:40px}
+      .header-date{display:none}
+      .header-icon-btn{width:32px;height:32px;font-size:.9rem}
+    }
+    @media (max-width:480px){
+      .category-section__quad-grid{grid-template-columns:1fr}
+      .category-section__row--grid{grid-template-columns:1fr}
+      .article-grid{grid-template-columns:1fr}
+    }
+    @media (max-width:768px){
+      .home-layout{grid-template-columns:1fr}
+      .category-section__row--hero-grid{grid-template-columns:1fr}
+      .editors-picks__row1{grid-template-columns:1fr}
+      .category-section__row--grid{grid-template-columns:repeat(2,1fr)}
+      .article-grid{grid-template-columns:repeat(2,1fr)}
+    }
+  </style>
+  <link rel="stylesheet" href="/css/style.min.css">
+  
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <!-- Re-applies dark mode / high contrast (if previously toggled, see
+       article.js) before anything below paints, so there's no flash of
+       the wrong color scheme. Must be the literal first thing inside
+       <body>, and inline/blocking (no defer/async) — an external file
+       would run too late, after the header below has already painted.
+       document.body doesn't exist yet while the parser is still inside
+       <head>, which is why this can't live there despite that being the
+       more typical place for this kind of snippet. -->
+  <script>
+    (function () {
+      try {
+        if (localStorage.getItem('at_darkmode') === '1') {
+          document.body.classList.add('dark-mode');
+        }
+        if (localStorage.getItem('at_highcontrast') === '1') {
+          document.body.classList.add('high-contrast');
+        }
+      } catch (e) {
+        // ignore — worst case the page flashes light before article.js re-applies it
+      }
+    })();
+  </script>
+  <!-- Header ad slot disabled site-wide for now — flip false to true to
+       bring it back. hideHeaderAd (passed by the home controller) is left
+       in place so the homepage stays ad-free even after this returns
+       elsewhere. -->
+  
+  <div id="headerSentinel" style="height: 1px;"></div>
+  <header class="site-header">
+  <div class="site-header__inner">
+    <div class="header-left">
+      <button class="hamburger-btn" id="btnHamburger" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="megaMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <a class="site-logo-link" href="/">
+        <picture>
+          <source srcset="/uploads/branding/logo.webp" type="image/webp">
+          <img class="site-logo" src="/uploads/branding/logo.jpg" width="350" height="72" alt="Assam Times - Community Newspaper">
+        </picture>
+      </a>
+    </div>
+
+    
+    <div class="header-right">
+      <div class="header-date">Sunday, October 4, 2026</div>
+
+      <div class="header-icons">
+        
+          <button class="header-icon-btn js-push-subscribe" type="button" aria-label="Subscribe to push notifications" title="Subscribe" hidden data-vapid-key="BCY0EVWY-NRW8NH5INresUfS1aAUP45rJEzI6S1yXFw-_gBXkggAUsUBpOicmbBxgfQPaFbD1yFSOdKtCQ-RK7U">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+
+          </button>
+        
+
+        <button class="header-icon-btn" id="searchToggle" type="button" aria-label="Open search" title="Search" aria-expanded="false" aria-controls="siteSearchBar">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+
+        </button>
+
+        <a href="/subscribe" class="header-plus-btn" aria-label="Subscribe to AssamTimes+" title="Subscribe to AssamTimes+">
+          <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" width="36" height="36" aria-hidden="true">
+            <circle cx="20" cy="20" r="20" fill="#000000"/>
+            <rect x="17" y="8" width="6" height="24" rx="2" fill="#ffffff"/>
+            <rect x="8" y="17" width="24" height="6" rx="2" fill="#ffffff"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-search-bar" id="siteSearchBar" hidden>
+    <form class="site-search-bar__form" action="/search" method="get" role="search">
+      <input type="search" name="q" placeholder="Search 23,000+ articles..." aria-label="Search articles" id="siteSearchInput">
+      <button type="submit" class="site-search-bar__submit" aria-label="Submit search">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+
+      </button>
+    </form>
+  </div>
+</header>
+
+  <div id="megaMenu" class="mega-menu" role="dialog" aria-modal="true" aria-label="Navigation menu" aria-hidden="true">
+  <div class="mega-menu__panel">
+    <div class="mega-menu__topbar">
+      <button id="btnMenuClose" class="mega-close" type="button" aria-label="Close menu">&times;</button>
+      <a href="/" class="mega-logo">
+        <img src="/uploads/branding/logo.jpg" alt="Assam Times" height="38">
+      </a>
+    </div>
+
+    <div class="mega-menu__grid">
+      <div class="mega-col">
+        <h3 class="mega-col__heading">Menu</h3>
+        <ul>
+          
+            
+              <li><a href="/">Home</a></li>
+            
+          
+            
+              <li><a href="/news">News</a></li>
+            
+          
+            
+              <li><a href="/page/about-us">About Us</a></li>
+            
+          
+            
+              <li><a href="/page/join-us">Team Up</a></li>
+            
+          
+            
+              <li><a href="/on-this-day">On The Day</a></li>
+            
+          
+            
+              <li><a href="/page/legal-aid">Legal Aid</a></li>
+            
+          
+        </ul>
+      </div>
+
+      <div class="mega-col">
+        <h3 class="mega-col__heading">Categories</h3>
+        <ul>
+          
+          
+            <li><a href="/category/Blog">Blog</a></li>
+          
+            <li><a href="/category/Business">Business</a></li>
+          
+            <li><a href="/category/Development">Development</a></li>
+          
+            <li><a href="/category/Editorial">Editorial</a></li>
+          
+            <li><a href="/category/Features">Features</a></li>
+          
+            <li><a href="/category/Latest%20News">Latest News</a></li>
+          
+            <li><a href="/category/Lifestyle">Lifestyle</a></li>
+          
+            <li><a href="/category/Politics">Politics</a></li>
+          
+            <li><a href="/category/Region">Region</a></li>
+          
+            <li><a href="/category/Society">Society</a></li>
+          
+            <li><a href="/category/Sports">Sports</a></li>
+          
+        </ul>
+      </div>
+
+      <div class="mega-col">
+        <h3 class="mega-col__heading">Reader Tools</h3>
+        <ul>
+          <li><a href="/subscribe"><span aria-hidden="true">&#128231;</span> Newsletter</a></li>
+          <li><a href="/subscribe"><span aria-hidden="true">&#128276;</span> Push Alerts</a></li>
+          <li><a href="/most-read"><span aria-hidden="true">&#128200;</span> Most Read</a></li>
+          <li><a href="/on-this-day"><span aria-hidden="true">&#128197;</span> On This Day</a></li>
+          <li><a href="/accessibility"><span aria-hidden="true">&#9855;</span> Accessibility</a></li>
+          <li><a href="/feed"><span aria-hidden="true">&#128240;</span> RSS Feed</a></li>
+        </ul>
+        <div class="mega-search">
+          <h3 class="mega-col__heading" style="margin-top:20px">Search</h3>
+          <form action="/search" method="GET">
+            <input type="text" name="q" placeholder="Search 23,000+ articles..." aria-label="Search articles">
+            <button type="submit" aria-label="Submit search">&rarr;</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="mega-col">
+        <h3 class="mega-col__heading">Follow Us</h3>
+        <ul class="mega-social">
+          <li>
+            <a href="https://www.facebook.com/AssamTimes.org/" target="_blank" rel="noopener" aria-label="Follow on Facebook">
+              <span aria-hidden="true">&#128216;</span> Facebook
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com/assamtimes_" target="_blank" rel="noopener" aria-label="Follow on X">
+              <span aria-hidden="true">&#120143;</span> X / Twitter
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/@assamtimes" target="_blank" rel="noopener" aria-label="Follow on YouTube">
+              <span aria-hidden="true">&#9654;</span> YouTube
+            </a>
+          </li>
+          <li>
+            <a href="/feed" aria-label="RSS Feed">
+              <span aria-hidden="true">&#128225;</span> RSS Feed
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="mega-menu__backdrop" id="menuBackdrop"></div>
+</div>
+
+  <div id="mobileMenu" class="mobile-menu" aria-hidden="true" role="dialog" aria-label="Mobile navigation">
+    <nav class="mobile-menu__nav">
+      
+        
+          <a href="/">Home</a>
+        
+      
+        
+          <a href="/news">News</a>
+        
+      
+        
+          <a href="/page/about-us">About Us</a>
+        
+      
+        
+          <a href="/page/join-us">Team Up</a>
+        
+      
+        
+          <a href="/on-this-day">On The Day</a>
+        
+      
+        
+          <a href="/page/legal-aid">Legal Aid</a>
+        
+      
+    </nav>
+    <div class="mobile-menu__backdrop" id="mobileMenuBackdrop"></div>
+  </div>
+
+  
+    <div class="breaking-news-bar" id="breakingBar" data-article-id="23787">
+      <div class="breaking-news-inner">
+        <span class="breaking-label">BREAKING</span>
+        <div class="breaking-ticker" id="breakingTicker">
+          
+            <a href="/article/indigenous-peoples-group-marks-foundation-day-in-mariani"
+               class="ticker-item active"
+               style="">Indigenous Peoples’ Group Marks Foundation Day in Mariani</a>
+          
+        </div>
+        <button type="button" id="breakingDismiss" aria-label="Dismiss breaking news" title="Dismiss">&#10005;</button>
+      </div>
+    </div>
+    <!-- Removing a previously-dismissed bar has to happen here, inline and
+         blocking, not in header.js (loaded with `defer`, which runs after
+         the browser has already painted this bar in its default visible
+         state) — same reasoning as the dark-mode anti-flash script above.
+         Measured this directly: a returning visitor who'd dismissed
+         breaking news on an earlier page view got an extra ~0.02-0.03 CLS
+         on every subsequent page load from header.js hiding the bar after
+         first paint. Using .remove() (not display:none) so header.js's own
+         `if (!bar) return` guard skips ticker/dismiss-button setup for
+         free — there's nothing left to wire up once the bar's gone. -->
+    <script>
+      (function () {
+        try {
+          var bar = document.getElementById('breakingBar');
+          if (bar && sessionStorage.getItem('breakingDismissed') === bar.getAttribute('data-article-id')) {
+            bar.remove();
+          }
+        } catch (e) {
+          // ignore — sessionStorage can throw in sandboxed/private contexts; worst case it stays visible
+        }
+      })();
+    </script>
+  
+
+  <main class="site-main" id="main-content">
+    <div class="home-stack">
+
+  
+    <section class="hero-section" aria-label="Top Stories">
+      <div class="hero-main">
+        
+        
+          <a href="/article/indigenous-peoples-group-marks-foundation-day-in-mariani" class="hero-lead">
+            <div class="hero-lead-text">
+              <h2>Indigenous Peoples’ Group Marks Foundation Day in Mariani</h2>
+              <p class="hero-deck"></p>
+            </div>
+            <img src="/uploads/articles/1791006785073-d1467579-article.webp" alt="Indigenous Peoples’ Group Marks Foundation Day in Mariani" width="400" height="280" loading="eager" fetchpriority="high">
+          </a>
+
+          <hr class="hero-rule">
+        
+
+        <div class="hero-grid">
+          
+            <a href="/article/peoples-consultation-on-agroecology-climate-adaptation-concludes-in-jorhat" class="hero-grid-item">
+              <div class="hero-grid-text">
+                <h4>People’s consultation on agroecology, climate adaptation concludes in Jorhat</h4>
+              </div>
+              <img src="/uploads/articles/1790884048642-04e042dd-thumb.webp" alt="" width="139" height="130" loading="lazy">
+            </a>
+          
+            <a href="/article/ustm-concludes-workshop-on-academic-writing-and-scholarly-publishing" class="hero-grid-item">
+              <div class="hero-grid-text">
+                <h4>USTM concludes workshop on academic writing and scholarly publishing</h4>
+              </div>
+              <img src="/uploads/articles/1790848140770-83eaf489-thumb.webp" alt="" width="139" height="130" loading="lazy">
+            </a>
+          
+            <a href="/article/grit-glory-released-in-guwahati-highlights-rss-work-in-northeast" class="hero-grid-item">
+              <div class="hero-grid-text">
+                <h4>‘Grit &amp; Glory’ released in Guwahati, highlights RSS work in Northeast</h4>
+              </div>
+              <img src="/uploads/articles/1790829002169-7d282f15-thumb.webp" alt="" width="139" height="130" loading="lazy">
+            </a>
+          
+            <a href="/article/young-poet-avinash-bastabhas-the-tale-of-termites-unveiled-in-jorhat" class="hero-grid-item">
+              <div class="hero-grid-text">
+                <h4>Young poet Avinash Bastabha’s ‘The Tale of Termites’ unveiled in Jorhat</h4>
+              </div>
+              <img src="/uploads/articles/1790828193953-e28c43a0-thumb.webp" alt="" width="139" height="130" loading="lazy">
+            </a>
+          
+        </div>
+      </div>
+
+      <div class="hero-sidebar">
+        
+          <a href="/article/art-exhibition-raises-awareness-for-vulture-conservation-in-jorhat" class="hero-sidebar-item">
+            <h5>Art exhibition raises awareness for vulture conservation in Jorhat</h5>
+            <span>1 Oct</span>
+          </a>
+        
+          <a href="/article/ntpc-bongaigaon-establishes-football-field-for-kokrajhar-youth" class="hero-sidebar-item">
+            <h5>NTPC Bongaigaon establishes football field for Kokrajhar youth</h5>
+            <span>1 Oct</span>
+          </a>
+        
+          <a href="/article/absu-holds-youth-motivation-programme-at-rangia-college" class="hero-sidebar-item">
+            <h5>ABSU holds youth motivation programme at Rangia College</h5>
+            <span>1 Oct</span>
+          </a>
+        
+          <a href="/article/sivasagar-forum-protests-at-ongc-assam-asset-seeks-jobs-and-flood-assistance" class="hero-sidebar-item">
+            <h5>Sivasagar forum protests at ONGC Assam Asset, seeks jobs and flood assistance</h5>
+            <span>1 Oct</span>
+          </a>
+        
+          <a href="/article/muga-field-day-promotes-scientific-silkworm-rearing-in-kokrajhar" class="hero-sidebar-item">
+            <h5>Muga Field Day promotes scientific silkworm rearing in Kokrajhar</h5>
+            <span>1 Oct</span>
+          </a>
+        
+      </div>
+    </section>
+  
+
+  
+    <section class="category-section divider-h" aria-label="Features">
+      <a class="category-section__title" href="/category/Features">Features</a>
+
+      <div class="features-section">
+        <div class="features-main">
+          
+          
+          
+            <a href="/article/restoring-forest-food-sources-to-address-goalparas-human-elephant-conflict-2" class="hero-lead">
+              <div class="hero-lead-text">
+                <h2>Restoring Forest Food Sources to Address Goalpara’s Human-Elephant Conflict</h2>
+                <p class="hero-deck"></p>
+              </div>
+              <img src="/uploads/articles/1790826180646-66c9f471-article.webp" alt="Restoring Forest Food Sources to Address Goalpara’s Human-Elephant Conflict" width="400" height="280" loading="lazy">
+            </a>
+
+            <hr class="hero-rule">
+          
+
+          <div class="hero-grid">
+            
+              <a href="/article/zubeen-garg-assam-society-and-the-rhythm-of-a-universal-vision" class="hero-grid-item">
+                <div class="hero-grid-text">
+                  <h4>Zubeen Garg: Assam, Society and the Rhythm of a Universal Vision</h4>
+                </div>
+                <img src="/uploads/articles/1789786039393-d241cb6c-thumb.webp" alt="" width="139" height="130" loading="lazy">
+              </a>
+            
+              <a href="/article/lost-winters-and-tropical-nights" class="hero-grid-item">
+                <div class="hero-grid-text">
+                  <h4>Lost Winters and Tropical Nights</h4>
+                </div>
+                <img src="/uploads/articles/1789148868532-0a6defe0-thumb.webp" alt="" width="139" height="130" loading="lazy">
+              </a>
+            
+              <a href="/article/surviving-patriarchy-beyond-care" class="hero-grid-item">
+                <div class="hero-grid-text">
+                  <h4>Surviving patriarchy beyond care</h4>
+                </div>
+                <img src="/uploads/articles/1787901101090-8e2791fb-thumb.webp" alt="" width="139" height="130" loading="lazy">
+              </a>
+            
+              <a href="/article/lakes-the-lifeblood-of-our-planet" class="hero-grid-item">
+                <div class="hero-grid-text">
+                  <h4>Lakes: The lifeblood of our planet</h4>
+                </div>
+                <img src="/uploads/articles/1787900205236-5c1d2f1e-thumb.webp" alt="" width="139" height="130" loading="lazy">
+              </a>
+            
+          </div>
+        </div>
+
+        <div class="features-sidebar">
+          
+            <a href="/article/assams-floods-in-a-warming-world" class="features-sidebar-item">
+              
+                <img src="/uploads/articles/1786938024353-2977aa54-thumb.webp" alt="" width="130" height="130" loading="lazy">
+              
+              <div class="features-sidebar-text">
+                <h5>Assam’s Floods in a Warming World</h5>
+                <span>17 Aug</span>
+              </div>
+            </a>
+          
+            <a href="/article/mining-near-kaziranga-the-deihori-river-questions-that-wont-go-away" class="features-sidebar-item">
+              
+                <img src="/uploads/articles/1786807148460-d853db55-thumb.webp" alt="" width="130" height="130" loading="lazy">
+              
+              <div class="features-sidebar-text">
+                <h5>Mining Near Kaziranga: The Deihori River Questions That Won’t Go Away</h5>
+                <span>15 Aug</span>
+              </div>
+            </a>
+          
+            <a href="/article/kaziranga-under-pressure-rethinking-protection-in-an-age-of-development" class="features-sidebar-item">
+              
+                <img src="/uploads/articles/1786732695059-ebf8cb4b-thumb.webp" alt="" width="130" height="130" loading="lazy">
+              
+              <div class="features-sidebar-text">
+                <h5>Kaziranga Under Pressure: Rethinking Protection in an Age of Development</h5>
+                <span>15 Aug</span>
+              </div>
+            </a>
+          
+            <a href="/article/when-science-walked-with-the-people" class="features-sidebar-item">
+              
+                <img src="/uploads/articles/1786731828481-01323521-thumb.webp" alt="" width="130" height="130" loading="lazy">
+              
+              <div class="features-sidebar-text">
+                <h5>When Science Walked with the People</h5>
+                <span>14 Aug</span>
+              </div>
+            </a>
+          
+            <a href="/article/different-contexts-common-aspirations" class="features-sidebar-item">
+              
+                <img src="/uploads/articles/1786732203957-f041c424-thumb.webp" alt="" width="130" height="130" loading="lazy">
+              
+              <div class="features-sidebar-text">
+                <h5>Different Contexts, Common Aspirations</h5>
+                <span>12 Aug</span>
+              </div>
+            </a>
+          
+        </div>
+      </div>
+    </section>
+  
+
+  
+    <div class="homepage-embed-section">
+      <hr class="embed-rule-top">
+      <div class="homepage-embed-content">
+        <iframe src="https://ourworldindata.org/grapher/distribution-of-population-poverty-thresholds?country=~IND&tab=chart" loading="lazy" style="width: 100%; height: 600px; border: 0px none;" allow="web-share; clipboard-write"></iframe>
+      </div>
+      <hr class="embed-rule-bottom">
+    </div>
+  
+
+  
+    <section class="category-section divider-h" aria-label="Editor's Picks">
+      <h2 class="category-section__title">Editor's Picks</h2>
+
+      <div class="editors-picks__row1">
+        
+        <article class="story-card story-card--split">
+          <a class="story-card__link" href="/article/a-heartfelt-tribute-to-poet-anis-uz-zaman">
+            <div class="story-card__media">
+              <picture>
+                <source media="(max-width: 600px)" srcset="/uploads/articles/1790044928584-12151ab2-mobile-hero.webp" width="520" height="350">
+                <img class="story-card__image" src="/uploads/articles/1790044928584-12151ab2-large.webp" width="460" height="335" alt="A heartfelt tribute to poet Anis Uz Zaman" loading="lazy">
+              </picture>
+            </div>
+            <div class="story-card__textblock">
+              <h2 class="story-card__title">A heartfelt tribute to poet Anis Uz Zaman</h2>
+              <p class="story-card__meta">
+                22 Sept 2026
+                &middot; 670 views
+              </p>
+            </div>
+          </a>
+        </article>
+
+        
+          <article class="story-card story-card--medium">
+            <a class="story-card__link" href="/article/citizens-convention-on-sivasagar-floods-to-demand-compensation-probe-into-mining">
+              <div class="story-card__media">
+                <picture>
+                  <source media="(max-width: 600px)" srcset="/uploads/articles/1789214646982-1fcf62c9-mobile-thumb.webp" width="515" height="200">
+                  <img class="story-card__image" src="/uploads/articles/1789214646982-1fcf62c9-thumb.webp" width="230" height="120" alt="Citizens’ convention on Sivasagar floods to demand compensation, probe into mining" loading="lazy">
+                </picture>
+              </div>
+              <h3 class="story-card__title">Citizens’ convention on Sivasagar floods to demand compensation, probe into mining</h3>
+            </a>
+          </article>
+        
+      </div>
+
+      
+      
+        <div class="category-section__row category-section__row--grid">
+          
+            <article class="story-card story-card--small">
+              <a class="story-card__link" href="/article/assams-roads-are-becoming-death-traps">
+                <div class="story-card__media">
+                  <picture>
+                    <source media="(max-width: 600px)" srcset="/uploads/articles/1788791598677-721ac9ec-mobile-thumb.webp" width="515" height="200">
+                    <img class="story-card__image" src="/uploads/articles/1788791598677-721ac9ec-thumb.webp" width="230" height="120" alt="Assam’s Roads Are Becoming Death Traps" loading="lazy">
+                  </picture>
+                </div>
+                <h3 class="story-card__title">Assam’s Roads Are Becoming Death Traps</h3>
+              </a>
+            </article>
+          
+            <article class="story-card story-card--small">
+              <a class="story-card__link" href="/article/hiren-gohain-slams-akhil-gogoi-over-self-serving-politics-amid-congress-raijor-dal-rift">
+                <div class="story-card__media">
+                  <picture>
+                    <source media="(max-width: 600px)" srcset="/uploads/articles/1788601426334-c872ba50-mobile-thumb.webp" width="515" height="200">
+                    <img class="story-card__image" src="/uploads/articles/1788601426334-c872ba50-thumb.webp" width="230" height="120" alt="Hiren Gohain Slams Akhil Gogoi Over &#34;Self-Serving&#34; Politics Amid Congress-Raijor Dal Rift" loading="lazy">
+                  </picture>
+                </div>
+                <h3 class="story-card__title">Hiren Gohain Slams Akhil Gogoi Over &#34;Self-Serving&#34; Politics Amid Congress-Raijor Dal Rift</h3>
+              </a>
+            </article>
+          
+            <article class="story-card story-card--small">
+              <a class="story-card__link" href="/article/lakes-the-lifeblood-of-our-planet">
+                <div class="story-card__media">
+                  <picture>
+                    <source media="(max-width: 600px)" srcset="/uploads/articles/1787900205236-5c1d2f1e-mobile-thumb.webp" width="515" height="200">
+                    <img class="story-card__image" src="/uploads/articles/1787900205236-5c1d2f1e-thumb.webp" width="230" height="120" alt="Lakes: The lifeblood of our planet" loading="lazy">
+                  </picture>
+                </div>
+                <h3 class="story-card__title">Lakes: The lifeblood of our planet</h3>
+              </a>
+            </article>
+          
+            <article class="story-card story-card--small">
+              <a class="story-card__link" href="/article/rima-dass-not-a-hero-wins-best-indie-film-at-melbourne">
+                <div class="story-card__media">
+                  <picture>
+                    <source media="(max-width: 600px)" srcset="/uploads/articles/1786759765060-b93511aa-mobile-thumb.webp" width="515" height="200">
+                    <img class="story-card__image" src="/uploads/articles/1786759765060-b93511aa-thumb.webp" width="230" height="120" alt="Rima Das&#39;s Not a Hero Wins Best Indie Film at Melbourne" loading="lazy">
+                  </picture>
+                </div>
+                <h3 class="story-card__title">Rima Das&#39;s Not a Hero Wins Best Indie Film at Melbourne</h3>
+              </a>
+            </article>
+          
+        </div>
+      
+    </section>
+  
+
+  <p class="home-stack__most-read-link">
+    <a href="/most-read">Most Read &rarr;</a>
+  </p>
+
+</div>
+
+  </main>
+
+  <footer class="site-footer">
+  
+    <footer style="background:#1a1a1a; color:#ccc; padding:40px 20px 20px;">
+  <div style="max-width:1000px; margin:0 auto;">
+    <div style="display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); gap:30px; text-align:left;">
+
+      <!-- Column 1: Content Policy -->
+      <div style="text-align:left;">
+        <p style="font-weight:bold; font-size:16px; color:#fff; border-bottom:2px solid #FF6600; padding-bottom:8px; margin-bottom:16px;">Content Policy</p>
+        <p style="margin-bottom:12px;">
+          <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US" rel="license">
+            <img src="https://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png" alt="Creative Commons License" />
+          </a>
+        </p>
+        <p style="margin-bottom:12px; line-height:1.6;">
+          <a href="https://www.assamtimes.org/" rel="cc:attributionURL" style="color:#ccc;">AssamTimes.org</a>
+          is licensed under a
+          <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US" rel="license" style="color:#ccc;">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>,
+          based on work published at
+          <a href="https://www.assamtimes.org/" rel="dct:source" style="color:#ccc;">assamtimes.org</a>.
+        </p>
+        <p style="margin-bottom:0;">Contact: <a href="mailto:editor@assamtimes.org" style="color:#FF6600;">editor@assamtimes.org</a></p>
+      </div>
+
+      <!-- Column 2: About + Social -->
+      <div style="text-align:left;">
+        <p style="font-weight:bold; font-size:16px; color:#fff; border-bottom:2px solid #FF6600; padding-bottom:8px; margin-bottom:16px;">Assam Times</p>
+        <p style="margin-bottom:12px; line-height:1.6;">Assam Times is a community-powered online newspaper, publishing since 2007.</p>
+        <p style="margin-bottom:12px;">Design &amp; hosting by <a href="https://www.rongjeng.com/" style="color:#FF6600;">Rongjeng Technologies</a>.</p>
+        <p style="margin-bottom:12px;">
+          Follow us on
+          <a href="https://twitter.com/assamtimes_" rel="me" style="color:#FF6600;">Twitter</a> and
+          <a href="https://www.facebook.com/AssamTimes.org" rel="me" style="color:#FF6600;">Facebook</a>.
+        </p>
+        <p style="margin-bottom:0;"><a href="https://chat.whatsapp.com/DrxUCevfzYX3fWWAxdQ9Xq" style="color:#FF6600;">Join the Assam Times WhatsApp Group</a></p>
+      </div>
+
+      <!-- Column 3: Links -->
+      <div style="text-align:left;">
+        <p style="font-weight:bold; font-size:16px; color:#fff; border-bottom:2px solid #FF6600; padding-bottom:8px; margin-bottom:16px;">Links</p>
+        <ul style="list-style:none; padding:0; margin:0; text-align:left;">
+          <li style="margin-bottom:8px;"><a href="/page/join-us" style="color:#ccc;">Join</a></li>
+          <li style="margin-bottom:8px;"><a href="/page/editorial-guidelines" style="color:#ccc;">Editorial Guidelines</a></li>
+          <li style="margin-bottom:8px;"><a href="/page/privacy-policy" style="color:#ccc;">Privacy Policy</a></li>
+<li style="margin-bottom:8px;"><a href="/page/	terms-of-service" style="color:#ccc;">Terms of Service</a></li>
+
+          <li style="margin-bottom:8px;"><a href="/page/resources" style="color:#ccc;">Resources</a></li>
+
+ <li style="margin-bottom:8px;"><a href="/page/legal-aid" style="color:#ccc;">Legal Aid</a></li>
+
+
+          <li style="margin-bottom:8px;"><a href="https://www.facebook.com/AssamTimes.org/" style="color:#ccc;">Facebook</a></li>
+          <li style="margin-bottom:0;"><a href="https://twitter.com/assamtimes_" style="color:#ccc;">Twitter</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div style="border-top:1px solid #444; padding-top:16px; margin-top:24px; text-align:center; color:#888;">
+      &copy; 2026 Assam Times. All rights reserved.
+    </div>
+  </div>
+</footer>
+  
+
+  <div class="footer-feeds">
+    <span class="footer-feeds__label">Subscribe:</span>
+    <a href="/feed">RSS Feed</a>
+    <a href="/feed/category/Region">Region</a>
+    <a href="/feed/category/Politics">Politics</a>
+    <a href="/feed/category/Business">Business</a>
+    <a href="/feed/category/Editorial">Editorial</a>
+    <a href="/feed/category/Society">Society</a>
+    <a href="/feed/category/Development">Development</a>
+    <a href="/feed/category/Features">Features</a>
+    <a href="/feed/category/Sports">Sports</a>
+    <a href="/feed/category/Lifestyle">Lifestyle</a>
+  </div>
+
+  <div class="footer-links">
+    <a href="/accessibility">Accessibility</a>
+    <a href="/on-this-day">On This Day</a>
+  </div>
+</footer>
+
+
+  <script src="/js/header.min.js" defer></script>
+  <script src="/js/push.min.js" defer></script>
+  <script src="/js/mega-menu.min.js" defer></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"e494ae7308484e47bf283ba5a90ad998","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>
