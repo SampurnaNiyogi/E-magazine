@@ -1539,3 +1539,71 @@ body {
 .cat-regional .section-bar { background: #1D3347; }
 .cat-regional .dual-articles .article-image { height: 150mm; }
 .cat-regional .glance-grid .article-image { margin-bottom: 0; }
+
+/* Added for flex layout of article source */
+.article-source {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+.article-source .read-more {
+  margin-top: 0 !important;
+}
+
+/* --- FIX OVERLAP --- */
+.article-body p, .article-content p {
+  line-height: 1.8 !important;
+  margin-bottom: 4mm !important;
+}
+/* Editorial note: tighter so the whole note fits on its page */
+.editorial-body {
+  font-size: 9.5pt !important;
+  line-height: 1.5 !important;
+  column-gap: 7mm !important;
+  column-fill: balance;
+}
+.editorial-body p {
+  line-height: 1.5 !important;
+  margin-bottom: 2.5mm !important;
+  orphans: 3;
+  widows: 3;
+}
+.article-page > .page-inner:has(.editorial-body) {
+  padding: 13mm 16mm 22mm !important;
+}
+.page-inner:has(.editorial-body) > .article-headline {
+  font-size: 24pt !important;
+  margin-bottom: 1mm !important;
+}
+.page-inner:has(.editorial-body) > h2 {
+  font-size: 13pt !important;
+  margin-bottom: 4mm !important;
+}
+.page-inner:has(.editorial-body) > .divider-line {
+  margin-bottom: 4mm !important;
+}
+.editorial-body p:last-child {
+  margin-bottom: 0 !important;
+  break-inside: avoid;
+}
+.article-source {
+  margin-bottom: 12mm !important;
+}
+.article-meta {
+  margin-bottom: 2mm !important;
+}
+h1.article-headline, h2.article-headline {
+  margin-bottom: 2mm !important;
+}
+
+/* Fix source overlap */
+.article-source {
+  flex-wrap: wrap !important;
+  gap: 2mm !important;
+}
+
+.article-body.two-column p {
+    line-height: 1.8 !important;
+    margin-bottom: 4mm !important;
+}
